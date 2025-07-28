@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt->bind_param("sssssssssssss", $name, $email, $phone, $hashedPassword, $bloodgroup, $gender, $birthdate, $weight, $state, $zipcode, $district, $area, $landmarks);
     if ($stmt->execute()) {
-        echo '<script>alert("Registration successful!");</script>';
+        echo '<script>alert("تم التسجيل بنجاح!");</script>';
     } else {
-        echo '<script>alert("Error: Unable to register. Please try again later.");</script>';
+        echo '<script>alert("حدث خطأ: لم يتم التسجيل. يرجى المحاولة لاحقًا.");</script>';
     }
     $stmt->close();
     $conn->close();
@@ -40,13 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Stream - connect the donors</title>
+  <title>التسجيل - ريد ستريم</title>
 
   <!-- favicon-->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -170,8 +170,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </li>
           </ul>
         </nav>
-        <a href="register.php" class="btn">Login / Register</a>
-        <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <a href="register.php" class="btn">تسجيل الدخول / إنشاء حساب</a>
+        <button class="nav-toggle-btn" aria-label="القائمة" data-nav-toggler>
           <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
           <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
         </button>
@@ -185,33 +185,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Login and Registration Form -->
             <div class="container">
               <div class="form-container">
-                <div class="form-title">Register</div>
+                <div class="form-title">إنشاء حساب جديد</div>
                 <form action="#" method="POST">
                   <!-- Login Information -->
                   <div class="form-section">
                     <div class="form-field">
-                      <label for="full-name">FULL NAME</label>
-                      <input type="text" id="full-name" name="full_name" required>
+                      <label for="full-name">الاسم الكامل</label>
+                      <input type="text" id="full-name" name="full_name" required placeholder="أدخل اسمك الكامل">
                     </div>
                     <div class="form-field">
-                      <label for="mobile">MOBILE NUMBER</label>
-                      <input type="text" id="mobile" name="mobile_number" required>
+                      <label for="mobile">رقم الجوال</label>
+                      <input type="text" id="mobile" name="mobile_number" required placeholder="أدخل رقم الجوال">
                     </div>
                     <div class="form-field">
-                      <label for="email">EMAIL</label>
-                      <input type="email" id="email" name="email" required>
+                      <label for="email">البريد الإلكتروني</label>
+                      <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
                     </div>
                     <div class="form-field">
-                      <label for="password">PASSWORD</label>
-                      <input type="password" id="password" name="password" required>
+                      <label for="password">كلمة المرور</label>
+                      <input type="password" id="password" name="password" required placeholder="أدخل كلمة المرور">
                     </div>
                   </div>
                   <!-- Donor Information -->
                   <div class="form-section">
                     <div class="form-field">
-                      <label for="blood-group">BLOOD GROUP</label>
+                      <label for="blood-group">فصيلة الدم</label>
                       <select id="blood-group" name="blood_group" required>
-                        <option value="" disabled selected>Select Blood Group</option>
+                        <option value="" disabled selected>اختر فصيلة الدم</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -223,49 +223,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </select>
                     </div>
                     <div class="form-field">
-                      <label for="birth-date">BIRTH DATE</label>
+                      <label for="birth-date">تاريخ الميلاد</label>
                       <input type="date" id="birth-date" name="birth_date" required>
                     </div>
                     <div class="form-field">
-                      <label for="gender">GENDER</label>
+                      <label for="gender">الجنس</label>
                       <select id="gender" name="gender" required>
-                        <option value="" disabled selected>Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="" disabled selected>اختر الجنس</option>
+                        <option value="Male">ذكر</option>
+                        <option value="Female">أنثى</option>
+                        <option value="Other">آخر</option>
                       </select>
                     </div>
                     <div class="form-field">
-                      <label for="weight">WEIGHT</label>
-                      <input type="text" id="weight" name="weight" required>
+                      <label for="weight">الوزن (كجم)</label>
+                      <input type="text" id="weight" name="weight" required placeholder="أدخل وزنك بالكيلوغرام">
                     </div>
                   </div>
                   <!-- Contact Information -->
                   <div class="form-section">
                     <div class="form-field">
-                      <label for="state">STATE</label>
-                      <input type="text" id="state" name="state" required>
+                      <label for="state">المنطقة</label>
+                      <input type="text" id="state" name="state" required placeholder="أدخل المنطقة">
                     </div>
                     <div class="form-field">
-                      <label for="district">DISTRICT</label>
-                      <input type="text" id="district" name="district" required>
+                      <label for="district">المحافظة</label>
+                      <input type="text" id="district" name="district" required placeholder="أدخل المحافظة">
                     </div>
                     <div class="form-field">
-                      <label for="zip-code">ZIP CODE</label>
-                      <input type="text" id="zip-code" name="zip_code" required>
+                      <label for="zip-code">الرمز البريدي</label>
+                      <input type="text" id="zip-code" name="zip_code" required placeholder="أدخل الرمز البريدي">
                     </div>
                     <div class="form-field">
-                      <label for="area">AREA</label>
-                      <input type="text" id="area" name="area" required>
+                      <label for="area">الحي</label>
+                      <input type="text" id="area" name="area" required placeholder="أدخل اسم الحي">
                     </div>
                   </div>
                   <div class="form-field">
-                      <label for="area">Landmarks</label>
-                      <input type="text" id="landmarks" name="landmarks" required>
+                      <label for="area">المعلم البارز</label>
+                      <input type="text" id="landmarks" name="landmarks" required placeholder="أدخل معلمًا بارزًا قريبًا">
                     </div>
-                  <button type="submit" class="btn">Register</button>
+                  <button type="submit" class="btn">تسجيل</button>
                 </form>
-                <div class="form-title">Already Registered? <u><a href="login.php" style="display: inline; color: #216aca;" onmouseover="this.style.color='#03d9ff'" onmouseout="this.style.color='#216aca'">Login Here</a></u></div>
+                <div class="form-title">مسجل مسبقًا؟ <u><a href="login.php" style="display: inline; color: #216aca;" onmouseover="this.style.color='#03d9ff'" onmouseout="this.style.color='#216aca'">تسجيل الدخول من هنا</a></u></div>
               </div>
               <figure class="hero-banner">
                 <img src="./assets/images/bg.svg" width="587" height="839" alt="hero banner" class="w-100">
@@ -433,7 +433,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </footer>
 
   <!--BACK TO TOP-->
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+  <a href="#top" class="back-top-btn" aria-label="العودة للأعلى" data-back-top-btn>
     <ion-icon name="caret-up" aria-hidden="true"></ion-icon>
   </a>
 

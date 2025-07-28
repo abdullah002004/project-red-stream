@@ -44,10 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: dashboard.php");
             exit();
         } else {
-            echo '<script>alert("Incorrect email or password. Please try again.");</script>';
+            echo '<script>alert("البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.");</script>';
         }
     } else {
-        echo '<script>alert("Incorrect email or password. Please try again.");</script>';
+        echo '<script>alert("البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.");</script>';
     }
     $stmt->close();
     $conn->close();

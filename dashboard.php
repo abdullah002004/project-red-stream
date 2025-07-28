@@ -46,13 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Validate the current password (You might want to check if it matches the one in the database)
         if (!password_verify($current_password, $password)) {
             // Incorrect current password
-            echo "<script>alert('Old password is incorrect. Please try again.');</script>";
+            echo "<script>alert('كلمة المرور القديمة غير صحيحة. يرجى المحاولة مرة أخرى.');</script>";
         } elseif (strlen($new_password) < 6) {
             // Validate the new password (You can add more validation rules if needed)
-            echo "<script>alert('Password must be at least 6 characters long.');</script>";
+            echo "<script>alert('يجب أن تكون كلمة المرور الجديدة 6 أحرف على الأقل.');</script>";
         } elseif ($new_password !== $confirm_new_password) {
             // New password and Confirm new password do not match
-            echo "<script>alert('New password and Confirm new password do not match.');</script>";
+            echo "<script>alert('كلمة المرور الجديدة وتأكيد كلمة المرور غير متطابقتين.');</script>";
         } else {
             // Hash the new password before updating in the database
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->close();
 
             // Show success message
-            echo "<script>alert('Password updated successfully.');</script>";
+            echo "<script>alert('تم تحديث كلمة المرور بنجاح.');</script>";
         }
     } else {
         // Other credentials form is submitted
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->close();
 
         // Show success message
-        echo "<script>alert('Information updated successfully.');</script>";
+        echo "<script>alert('تم تحديث المعلومات بنجاح.');</script>";
     }
 }
 
