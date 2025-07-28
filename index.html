@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Stream - connect the donors</title>
+  <title>ريد ستريم - منصة التبرع بالدم</title>
 
   <!-- favicon-->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -17,7 +17,7 @@
   <!-- google font link-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
   .popup {
       display: flex;
@@ -93,27 +93,27 @@
     </div>
     <div class="header-bottom" data-header>
       <div class="container">
-        <a href="#" class="logo">Red Stream</a>
+        <a href="#" class="logo">ريد ستريم</a>
         <nav class="navbar container" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="index.php" class="navbar-link" data-nav-link>Home</a>
+              <a href="index.php" class="navbar-link" data-nav-link>الرئيسية</a>
             </li>
             <li>
-              <a href="#service" class="navbar-link" data-nav-link>Find donor</a>
+              <a href="#service" class="navbar-link" data-nav-link>ابحث عن متبرع</a>
             </li>
             <li>
-              <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+              <a href="#about" class="navbar-link" data-nav-link>من نحن</a>
             </li>
             <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+              <a href="#blog" class="navbar-link" data-nav-link>المدونة</a>
             </li>
             <li>
-              <a href="contact.php" class="navbar-link" data-nav-link>Contact</a>
+              <a href="contact.php" class="navbar-link" data-nav-link>تواصل معنا</a>
             </li>
           </ul>
         </nav>
-        <a href="register.php" class="btn">Login / Register</a>
+        <a href="register.php" class="btn">تسجيل الدخول / إنشاء حساب</a>
         <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
           <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
           <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
@@ -130,17 +130,15 @@
         <div class="container">
           <div class="hero-content">
             <img src="assets/images/blood-icon.png" alt="ICON" width="70" height="70"> 
-            <p class="section-subtitle">Welcome To Red Stream</p>
-            <h1 class="h1 hero-title">Connecting The Donors...</h1>
+            <p class="section-subtitle">مرحبًا بك في ريد ستريم</p>
+            <h1 class="h1 hero-title">نربط المتبرعين بالمحتاجين للحياة</h1>
             <p class="hero-text">
-              Our mission is to bridge the gap between blood donors and recipients, providing a seamless and efficient experience for both parties.
-              You can trust us,
-              we provide the best service...
+              رسالتنا هي سد الفجوة بين المتبرعين بالدم والمحتاجين، وتقديم تجربة سلسة وفعالة للطرفين. يمكنك الوثوق بنا، نحن نقدم أفضل خدمة إنسانية...
             </p>
             <form action="" class="hero-form" method="POST">
-              <input type="email" name="email_address" aria-label="email" placeholder="Your Email Address..." required
+              <input type="email" name="email_address" aria-label="email" placeholder="بريدك الإلكتروني..." required
                 class="email-field">
-              <button type="submit" class="btn">Get Response Back</button>
+              <button type="submit" class="btn">احصل على تواصل</button>
             </form>
           </div>
           <figure class="hero-banner">
@@ -152,28 +150,28 @@
       <!--SERVICE-->
 <section class="section service" id="service" aria-label="service">
   <div class="container">
-    <p class="section-subtitle text-center">Find the best Donor For You</p>
-    <h2 class="h2 section-title text-center">FIND DONOR</h2>
+    <p class="section-subtitle text-center">ابحث عن أفضل متبرع لك</p>
+    <h2 class="h2 section-title text-center">ابحث عن متبرع</h2>
 
     <!-- Replace the existing content with your form -->
     <form class="donor-form">
       <div class="form-group">
-        <label for="name">Name:</label>
+        <label for="name">الاسم:</label>
         <input type="text" id="name" name="name" required>
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone:</label>
+        <label for="phone">رقم الجوال:</label>
         <input type="tel" id="phone" name="phone" required>
       </div>
 
       <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="email">البريد الإلكتروني:</label>
         <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
-        <label for="blood-type">Blood Type:</label>
+        <label for="blood-type">فصيلة الدم:</label>
         <select id="blood-type" name="blood-type">
           <option value="A+">A+</option>
           <option value="A-">A-</option>
@@ -187,16 +185,16 @@
       </div>
 
       <div class="form-group">
-        <label for="city">City:</label>
+        <label for="city">المدينة:</label>
         <input type="text" id="city" name="city" required>
       </div>
 
       <div class="form-group">
-        <label for="state">State:</label>
+        <label for="state">المنطقة:</label>
         <input type="text" id="state" name="state" required>
       </div>
 
-      <button type="submit" class="btn">Find Donor</button>
+      <button type="submit" class="btn">ابحث الآن</button>
     </form>
   </div>
 </section>
@@ -211,17 +209,15 @@
               class="w-100">
           </figure>
           <div class="about-content">
-            <p class="section-subtitle">About Us</p>
-            <h2 class="h2 section-title">We Care For Your Loved Ones ꨄ︎</h2>
+            <p class="section-subtitle">من نحن</p>
+            <h2 class="h2 section-title">نحن نهتم بأحبائكم ꨄ︎</h2>
             <p class="section-text section-text-1">
-              At Red Stream, we are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry.
-               Our mission is to provide a seamless and efficient experience for both donors and recipients, ensuring timely access to life-saving blood transfusions.
+              في ريد ستريم، نحن شغوفون بربط المتبرعين بالدم مع المحتاجين وسد الفجوة في القطاع الصحي. رسالتنا هي توفير تجربة سلسة وفعالة للطرفين، وضمان الوصول السريع لعمليات نقل الدم المنقذة للحياة.
             </p>
             <p class="section-text">
-              We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
-               Whether you're a potential donor or someone in need of blood, we are here to assist you every step of the way.
+              نسعى لخلق مجتمع يعزز التعاطف والدعم والتضامن بين الأفراد الملتزمين بإحداث فرق. سواء كنت متبرعًا محتملاً أو بحاجة للدم، نحن هنا لمساعدتك في كل خطوة.
             </p>
-            <a href="about.html" class="btn">Read more About Us</a>
+            <a href="about.html" class="btn">اقرأ المزيد عنّا</a>
           </div>
         </div>
       </section>
@@ -230,8 +226,8 @@
 
       <section class="section doctor" aria-label="doctor">
         <div class="container">
-          <p class="section-subtitle text-center">Emergency !</p>
-          <h2 class="h2 section-title text-center">Our other services</h2>
+          <p class="section-subtitle text-center">حالات الطوارئ!</p>
+          <h2 class="h2 section-title text-center">خدماتنا الأخرى</h2>
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="doctor-card">
@@ -240,9 +236,9 @@
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="#" class="card-title">Pre Book Blood</a>
+                  <a href="#" class="card-title">حجز دم مسبق</a>
                 </h3>
-                <p class="card-subtitle">Book Blood For An upcoming Date</p>
+                <p class="card-subtitle">احجز دم لتاريخ قادم</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -269,9 +265,9 @@
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="#" class="card-title">Call Ambulance</a>
+                  <a href="#" class="card-title">اتصل بالإسعاف</a>
                 </h3>
-                <p class="card-subtitle">Get our ambulance service</p>
+                <p class="card-subtitle">احصل على خدمة الإسعاف</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -299,9 +295,9 @@
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="#" class="card-title">Why Donate ?</a>
+                  <a href="#" class="card-title">لماذا التبرع؟</a>
                 </h3>
-                <p class="card-subtitle">Why donate blood ?</p>
+                <p class="card-subtitle">لماذا يجب التبرع بالدم؟</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -328,9 +324,9 @@
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="canyoudonate.html" class="card-title">Can You Donate ?</a>
+                  <a href="canyoudonate.html" class="card-title">هل يمكنك التبرع؟</a>
                 </h3>
-                <p class="card-subtitle">Check that can you donate blood</p>
+                <p class="card-subtitle">تحقق إذا كنت مؤهلاً للتبرع</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -363,9 +359,9 @@
               class="w-100">
           </figure>
           <div class="cta-content">
-            <p class="section-subtitle">Give Blood Directly To Us</p>
-            <h2 class="h2 section-title">We Are open And Welcoming Donors</h2>
-            <a href="#" class="btn">Book schedule</a>
+            <p class="section-subtitle">تبرع بالدم مباشرة لنا</p>
+            <h2 class="h2 section-title">نحن متواجدون ونرحب بالمتبرعين</h2>
+            <a href="#" class="btn">احجز موعد</a>
           </div>
         </div>
       </section>
@@ -373,8 +369,8 @@
       <!--BLOG-->
       <section class="section blog" id="blog" aria-label="blog">
         <div class="container">
-          <p class="section-subtitle text-center">Our Blog</p>
-          <h2 class="h2 section-title text-center">Latest Blog & News</h2>
+          <p class="section-subtitle text-center">مدونتنا</p>
+          <h2 class="h2 section-title text-center">آخر الأخبار والمقالات</h2>
           <ul class="blog-list">
             <li>
               <div class="blog-card">
@@ -388,12 +384,12 @@
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Blah Blah Blah</a>
+                    <a href="#" class="card-title">أهمية التبرع بالدم في إنقاذ الأرواح</a>
                   </h3>
                   <p class="card-text">
-                    When it spins, when it swirls When it whirls, when it twirls Two little beautiful girls Lookin' puzzled, in a daze I know it's confusing you
+                    التبرع بالدم هو عمل إنساني نبيل يساهم في إنقاذ حياة الكثيرين. تعرف على أهمية التبرع وكيف يمكنك أن تكون سببًا في الأمل.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -409,12 +405,12 @@
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Foo foo foo</a>
+                    <a href="#" class="card-title">من يمكنه التبرع بالدم؟</a>
                   </h3>
                   <p class="card-text">
-                    Now hush little baby, don't you cry Everything's gonna be alright Stiffen that upper lip up little lady, I told ya Daddy's here to hold ya through the night I know mommy's not here right now
+                    هناك شروط صحية للتبرع بالدم. تعرف على المؤهلات وكيفية الاستعداد للتبرع.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -430,12 +426,12 @@
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Wee wee wee</a>
+                    <a href="#" class="card-title">قصص ملهمة من المتبرعين</a>
                   </h3>
                   <p class="card-text">
-                    Victim of the great machine, in love with everything I see Neon lights surrounding me, I indulge in luxury Everything I do is wrong
+                    اقرأ قصصًا حقيقية لأشخاص أنقذوا أرواحًا من خلال تبرعهم بالدم.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -451,10 +447,9 @@
     <div class="footer-top section">
       <div class="container">
         <div class="footer-brand">
-          <a href="#" class="logo">Red Stream</a>
+          <a href="#" class="logo">ريد ستريم</a>
           <p class="footer-text">
-            We are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry. 
-            We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
+            نحن شغوفون بربط المتبرعين بالدم مع المحتاجين وسد الفجوة في القطاع الصحي. نسعى لخلق مجتمع يعزز التعاطف والدعم والتضامن بين الأفراد الملتزمين بإحداث فرق.
           </p>
           <div class="schedule">
             <div class="schedule-icon">
@@ -468,89 +463,89 @@
         </div>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Other Links</p>
+            <p class="footer-list-title">روابط أخرى</p>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Home</span>
+              <span class="span">الرئيسية</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Find donor</span>
+              <span class="span">ابحث عن متبرع</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">About us</span>
+              <span class="span">من نحن</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Blog</span>
+              <span class="span">المدونة</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Contact</span>
+              <span class="span">تواصل معنا</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Login / Register</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Our Services</p>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
+              <span class="span">تسجيل الدخول / إنشاء حساب</span>
             </a>
           </li>
         </ul>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Contact Us</p>
+            <p class="footer-list-title">خدماتنا</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">xxxxxxxxx</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">تواصل معنا</p>
           </li>
           <li class="footer-item">
             <div class="item-icon">
@@ -558,8 +553,8 @@
             </div>
             <a href="https://goo.gl/maps/BYA5MxQUg5B8ZFLcA">
             <address class="item-text">
-              Near Thaluk Headquarters,<br>
-              Vaikom, Kottayam, Kerala IN
+              بالقرب من مقر التلك،
+              فيكوم، كوتايام، كيرلا، الهند
             </address>
           </a>
           </li>
@@ -581,7 +576,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
-          &copy; 2024 All Rights Reserved by Red Stream
+          &copy; 2024 جميع الحقوق محفوظة لدى ريد ستريم
         </p>
         <ul class="social-list">
           <li>

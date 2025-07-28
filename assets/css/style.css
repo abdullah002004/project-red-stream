@@ -2,6 +2,12 @@
 
   /**colors*/
 
+  --royal-red: #b80000;
+  --gold: #ffd700;
+  --dark-gray: #222831;
+  --light-gray: #f6f6f6;
+  --white: #fff;
+  --main-font: 'Cairo', 'Tajawal', Arial, sans-serif;
   --light-steel-blue: hsl(218, 33%, 77%);
   --royal-blue-light: hsl(225, 68%, 53%);
   --flickr-blue_30: hsla(225, 68%, 53%, 0.3);
@@ -12,11 +18,9 @@
   --gainsboro_50: hsla(0, 0%, 85%, 0.5);
   --lavender-web: hsl(225, 67%, 91%);
   --sonic-silver: hsl(0, 0%, 47%);
-  --light-gray: hsl(0, 0%, 84%);
   --cultured: hsl(0, 0%, 97%);
   --black_10: hsla(0, 0%, 0%, 0.1);
   --black_8: hsla(0, 0%, 0%, 0.08);
-  --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --jet: hsl(0, 0%, 20%);
 
@@ -111,14 +115,15 @@ ion-icon { pointer-events: none; }
 address { font-style: normal; }
 
 html {
-  font-family: var(--ff-roboto);
+  font-family: var(--main-font);
   font-size: 10px;
   scroll-behavior: smooth;
+  direction: rtl;
 }
 
 body {
-  background-color: var(--white);
-  color: var(--sonic-silver);
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
   font-size: 1.5rem;
 }
 
@@ -161,7 +166,7 @@ body {
 .h3 { font-size: var(--fs-5); }
 
 .btn {
-  background-image: linear-gradient( var(--deg, 90deg), var(--carolina-blue) 0%, var(--royal-blue-light) 100%);
+  background-image: linear-gradient(90deg, var(--royal-red) 0%, var(--gold) 100%);
   color: var(--white);
   font-size: var(--fs-7);
   text-transform: uppercase;
