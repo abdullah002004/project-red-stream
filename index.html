@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Stream - connect the donors</title>
+  <title>التيار الأحمر - ربط المتبرعين</title>
 
   <!-- favicon-->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -13,12 +13,21 @@
   <!--css-->
   <link rel="stylesheet" href="./assets/css/style.css">
   
-
-  <!-- google font link-->
+  <!-- Arabic font link-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
+  * {
+    font-family: 'Cairo', 'Amiri', sans-serif;
+  }
+  
+  body {
+    direction: rtl;
+    text-align: right;
+  }
+  
   .popup {
       display: flex;
       align-items: center;
@@ -27,15 +36,257 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 20px;
-      background: linear-gradient(135deg, #ffffff, #a3d2ee);
-      color: #0e254e;
-      font-size: 16px;
+      padding: 25px 35px;
+      background: linear-gradient(135deg, #ffffff, #ff6b6b, #4ecdc4);
+      color: #2c3e50;
+      font-size: 18px;
+      font-weight: 600;
       z-index: 9999;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      animation: popupSlide 0.4s ease-out;
     }
-    </style>
+    
+    @keyframes popupSlide {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+    
+    /* Enhanced RTL Navigation */
+    .navbar-list {
+      flex-direction: row-reverse;
+    }
+    
+    .contact-list {
+      flex-direction: row-reverse;
+    }
+    
+    .social-list {
+      flex-direction: row-reverse;
+    }
+    
+    /* Enhanced Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(52, 152, 219, 0.8)), url('./assets/images/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(231, 76, 60, 0.1), rgba(52, 152, 219, 0.1));
+      z-index: 1;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-title {
+      background: linear-gradient(45deg, #e74c3c, #3498db, #9b59b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+    
+    @keyframes titleGlow {
+      from {
+        filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.3));
+      }
+      to {
+        filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.5));
+      }
+    }
+    
+    /* Enhanced Cards */
+    .doctor-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .doctor-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e74c3c, #3498db, #9b59b6);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .doctor-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .doctor-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Enhanced Form Styling */
+    .donor-form {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.9));
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      margin: 40px auto;
+      max-width: 800px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 16px;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid rgba(52, 152, 219, 0.3);
+      border-radius: 15px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+      transform: scale(1.02);
+    }
+    
+    /* Enhanced Button */
+    .btn {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(231, 76, 60, 0.4);
+    }
+    
+    /* Enhanced Blog Cards */
+    .blog-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.8));
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .hero-banner {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Pulse Animation for Blood Icon */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .hero-content img {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Enhanced Footer */
+    .footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e74c3c, #3498db, #9b59b6);
+    }
+  </style>
+  
   <script>
     // Function to display the popup message
     function showPopup(message) {
@@ -44,10 +295,12 @@
       popup.textContent = message;
       document.body.appendChild(popup);
 
-      // Automatically close the popup after 3 seconds
+      // Automatically close the popup after 4 seconds
       setTimeout(function () {
-        popup.remove();
-      }, 3000);
+        popup.style.opacity = '0';
+        popup.style.transform = 'translate(-50%, -60%)';
+        setTimeout(() => popup.remove(), 300);
+      }, 4000);
     }
   </script>
 </head>
@@ -93,27 +346,27 @@
     </div>
     <div class="header-bottom" data-header>
       <div class="container">
-        <a href="#" class="logo">Red Stream</a>
+        <a href="#" class="logo">التيار الأحمر</a>
         <nav class="navbar container" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="index.php" class="navbar-link" data-nav-link>Home</a>
+              <a href="index.php" class="navbar-link" data-nav-link>الرئيسية</a>
             </li>
             <li>
-              <a href="#service" class="navbar-link" data-nav-link>Find donor</a>
+              <a href="#service" class="navbar-link" data-nav-link>البحث عن متبرع</a>
             </li>
             <li>
-              <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+              <a href="#about" class="navbar-link" data-nav-link>من نحن</a>
             </li>
             <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+              <a href="#blog" class="navbar-link" data-nav-link>المدونة</a>
             </li>
             <li>
-              <a href="contact.php" class="navbar-link" data-nav-link>Contact</a>
+              <a href="contact.php" class="navbar-link" data-nav-link>اتصل بنا</a>
             </li>
           </ul>
         </nav>
-        <a href="register.php" class="btn">Login / Register</a>
+        <a href="register.php" class="btn">تسجيل الدخول / إنشاء حساب</a>
         <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
           <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
           <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
@@ -129,22 +382,22 @@
         aria-label="hero">
         <div class="container">
           <div class="hero-content">
-            <img src="assets/images/blood-icon.png" alt="ICON" width="70" height="70"> 
-            <p class="section-subtitle">Welcome To Red Stream</p>
-            <h1 class="h1 hero-title">Connecting The Donors...</h1>
+            <img src="assets/images/blood-icon.png" alt="أيقونة الدم" width="70" height="70"> 
+            <p class="section-subtitle">مرحباً بكم في التيار الأحمر</p>
+            <h1 class="h1 hero-title">ربط المتبرعين...</h1>
             <p class="hero-text">
-              Our mission is to bridge the gap between blood donors and recipients, providing a seamless and efficient experience for both parties.
-              You can trust us,
-              we provide the best service...
+              مهمتنا هي سد الفجوة بين المتبرعين بالدم والمحتاجين إليه، وتوفير تجربة سلسة وفعالة لكلا الطرفين.
+              يمكنكم الثقة بنا،
+              نحن نقدم أفضل الخدمات...
             </p>
             <form action="" class="hero-form" method="POST">
-              <input type="email" name="email_address" aria-label="email" placeholder="Your Email Address..." required
+              <input type="email" name="email_address" aria-label="البريد الإلكتروني" placeholder="عنوان بريدكم الإلكتروني..." required
                 class="email-field">
-              <button type="submit" class="btn">Get Response Back</button>
+              <button type="submit" class="btn">احصل على رد</button>
             </form>
           </div>
           <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="587" height="839" alt="hero banner" class="w-100">
+            <img src="./assets/images/hero-banner.png" width="587" height="839" alt="لافتة البطل" class="w-100">
           </figure>
         </div>
       </section>
@@ -152,28 +405,27 @@
       <!--SERVICE-->
 <section class="section service" id="service" aria-label="service">
   <div class="container">
-    <p class="section-subtitle text-center">Find the best Donor For You</p>
-    <h2 class="h2 section-title text-center">FIND DONOR</h2>
+    <p class="section-subtitle text-center">ابحث عن أفضل متبرع لك</p>
+    <h2 class="h2 section-title text-center">البحث عن متبرع</h2>
 
-    <!-- Replace the existing content with your form -->
     <form class="donor-form">
       <div class="form-group">
-        <label for="name">Name:</label>
+        <label for="name">الاسم:</label>
         <input type="text" id="name" name="name" required>
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone:</label>
+        <label for="phone">الهاتف:</label>
         <input type="tel" id="phone" name="phone" required>
       </div>
 
       <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="email">البريد الإلكتروني:</label>
         <input type="email" id="email" name="email" required>
       </div>
 
       <div class="form-group">
-        <label for="blood-type">Blood Type:</label>
+        <label for="blood-type">فصيلة الدم:</label>
         <select id="blood-type" name="blood-type">
           <option value="A+">A+</option>
           <option value="A-">A-</option>
@@ -187,62 +439,59 @@
       </div>
 
       <div class="form-group">
-        <label for="city">City:</label>
+        <label for="city">المدينة:</label>
         <input type="text" id="city" name="city" required>
       </div>
 
       <div class="form-group">
-        <label for="state">State:</label>
+        <label for="state">المحافظة:</label>
         <input type="text" id="state" name="state" required>
       </div>
 
-      <button type="submit" class="btn">Find Donor</button>
+      <button type="submit" class="btn">البحث عن متبرع</button>
     </form>
   </div>
 </section>
-
-
 
       <!--ABOUT-->
       <section class="section about" id="about" aria-label="about">
         <div class="container">
           <figure class="about-banner">
-            <img src="./assets/images/about-banner.png" width="470" height="538" loading="lazy" alt="about banner"
+            <img src="./assets/images/about-banner.png" width="470" height="538" loading="lazy" alt="لافتة من نحن"
               class="w-100">
           </figure>
           <div class="about-content">
-            <p class="section-subtitle">About Us</p>
-            <h2 class="h2 section-title">We Care For Your Loved Ones ꨄ︎</h2>
+            <p class="section-subtitle">من نحن</p>
+            <h2 class="h2 section-title">نحن نهتم بأحبائكم ♥</h2>
             <p class="section-text section-text-1">
-              At Red Stream, we are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry.
-               Our mission is to provide a seamless and efficient experience for both donors and recipients, ensuring timely access to life-saving blood transfusions.
+              في التيار الأحمر، نحن متحمسون لربط المتبرعين بالدم مع المحتاجين إليه وسد الفجوة في صناعة الرعاية الصحية.
+               مهمتنا هي توفير تجربة سلسة وفعالة لكل من المتبرعين والمحتاجين، مما يضمن الوصول في الوقت المناسب لعمليات نقل الدم المنقذة للحياة.
             </p>
             <p class="section-text">
-              We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
-               Whether you're a potential donor or someone in need of blood, we are here to assist you every step of the way.
+              نسعى لإنشاء مجتمع يعزز التعاطف والدعم والتضامن بين الأفراد الملتزمين بإحداث فرق.
+               سواء كنتم متبرعين محتملين أو شخصاً بحاجة إلى الدم، نحن هنا لمساعدتكم في كل خطوة من الطريق.
             </p>
-            <a href="about.html" class="btn">Read more About Us</a>
+            <a href="about.html" class="btn">اقرأ المزيد عنا</a>
           </div>
         </div>
       </section>
 
       <!--services-->
-
       <section class="section doctor" aria-label="doctor">
         <div class="container">
-          <p class="section-subtitle text-center">Emergency !</p>
-          <h2 class="h2 section-title text-center">Our other services</h2>
+          <p class="section-subtitle text-center">طوارئ!</p>
+          <h2 class="h2 section-title text-center">خدماتنا الأخرى</h2>
           <ul class="has-scrollbar">
             <li class="scrollbar-item">
               <div class="doctor-card">
                 <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-1.png" width="460" height="500" loading="lazy" alt="PREBOOK"
+                  <img src="./assets/images/doctor-1.png" width="460" height="500" loading="lazy" alt="حجز مسبق"
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="#" class="card-title">Pre Book Blood</a>
+                  <a href="#" class="card-title">حجز الدم مسبقاً</a>
                 </h3>
-                <p class="card-subtitle">Book Blood For An upcoming Date</p>
+                <p class="card-subtitle">احجز الدم لتاريخ قادم</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -265,43 +514,13 @@
             <li class="scrollbar-item">
               <div class="doctor-card">
                 <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-2.png" width="460" height="500" loading="lazy" alt="AMBULANCE"
+                  <img src="./assets/images/doctor-2.png" width="460" height="500" loading="lazy" alt="إسعاف"
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="#" class="card-title">Call Ambulance</a>
+                  <a href="#" class="card-title">استدعاء الإسعاف</a>
                 </h3>
-                <p class="card-subtitle">Get our ambulance service</p>
-                <ul class="card-social-list">
-                  <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-twitter"></ion-icon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="scrollbar-item">
-              <div class="doctor-card">
-
-                <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-3.png" width="460" height="500" loading="lazy" alt="WHY DONATE ?"
-                    class="img-cover">
-                </div>
-                <h3 class="h3">
-                  <a href="#" class="card-title">Why Donate ?</a>
-                </h3>
-                <p class="card-subtitle">Why donate blood ?</p>
+                <p class="card-subtitle">احصل على خدمة الإسعاف لدينا</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -324,13 +543,42 @@
             <li class="scrollbar-item">
               <div class="doctor-card">
                 <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-4.png" width="460" height="500" loading="lazy" alt="CAN YOU DONATE"
+                  <img src="./assets/images/doctor-3.png" width="460" height="500" loading="lazy" alt="لماذا التبرع؟"
                     class="img-cover">
                 </div>
                 <h3 class="h3">
-                  <a href="canyoudonate.html" class="card-title">Can You Donate ?</a>
+                  <a href="#" class="card-title">لماذا التبرع؟</a>
                 </h3>
-                <p class="card-subtitle">Check that can you donate blood</p>
+                <p class="card-subtitle">لماذا تتبرع بالدم؟</p>
+                <ul class="card-social-list">
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="scrollbar-item">
+              <div class="doctor-card">
+                <div class="card-banner img-holder" style="--width: 460; --height: 500;">
+                  <img src="./assets/images/doctor-4.png" width="460" height="500" loading="lazy" alt="هل يمكنك التبرع"
+                    class="img-cover">
+                </div>
+                <h3 class="h3">
+                  <a href="canyoudonate.html" class="card-title">هل يمكنك التبرع؟</a>
+                </h3>
+                <p class="card-subtitle">تحقق من إمكانية تبرعك بالدم</p>
                 <ul class="card-social-list">
                   <li>
                     <a href="#" class="card-social-link">
@@ -354,18 +602,17 @@
         </div>
       </section>
 
-
       <!--CTA-->
       <section class="section cta" aria-label="cta">
         <div class="container">
           <figure class="cta-banner">
-            <img src="./assets/images/cta-banner.png" width="1056" height="1076" loading="lazy" alt="cta banner"
+            <img src="./assets/images/cta-banner.png" width="1056" height="1076" loading="lazy" alt="لافتة الدعوة للعمل"
               class="w-100">
           </figure>
           <div class="cta-content">
-            <p class="section-subtitle">Give Blood Directly To Us</p>
-            <h2 class="h2 section-title">We Are open And Welcoming Donors</h2>
-            <a href="#" class="btn">Book schedule</a>
+            <p class="section-subtitle">تبرع بالدم مباشرة لنا</p>
+            <h2 class="h2 section-title">نحن مفتوحون ونرحب بالمتبرعين</h2>
+            <a href="#" class="btn">حجز موعد</a>
           </div>
         </div>
       </section>
@@ -373,27 +620,27 @@
       <!--BLOG-->
       <section class="section blog" id="blog" aria-label="blog">
         <div class="container">
-          <p class="section-subtitle text-center">Our Blog</p>
-          <h2 class="h2 section-title text-center">Latest Blog & News</h2>
+          <p class="section-subtitle text-center">مدونتنا</p>
+          <h2 class="h2 section-title text-center">آخر المقالات والأخبار</h2>
           <ul class="blog-list">
             <li>
               <div class="blog-card">
                 <figure class="card-banner img-holder" style="--width: 1180; --height: 800;">
                   <img src="./assets/images/blog-1.jpg" width="1180" height="800" loading="lazy"
-                    alt="Cras accumsan nulla nec lacus ultricies placerat." class="img-cover">
+                    alt="أهمية التبرع بالدم في إنقاذ الأرواح" class="img-cover">
                   <div class="card-badge">
                     <ion-icon name="calendar-outline"></ion-icon>
-                    <time class="time" datetime="2022-03-24">24th March 2022</time>
+                    <time class="time" datetime="2024-03-24">24 مارس 2024</time>
                   </div>
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Blah Blah Blah</a>
+                    <a href="#" class="card-title">أهمية التبرع بالدم في إنقاذ الأرواح</a>
                   </h3>
                   <p class="card-text">
-                    When it spins, when it swirls When it whirls, when it twirls Two little beautiful girls Lookin' puzzled, in a daze I know it's confusing you
+                    التبرع بالدم هو عمل إنساني نبيل يساهم في إنقاذ حياة المرضى والمحتاجين. تعرف على الفوائد الصحية للمتبرع والمجتمع من خلال هذا العمل الخيري العظيم.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -401,20 +648,20 @@
               <div class="blog-card">
                 <figure class="card-banner img-holder" style="--width: 1180; --height: 800;">
                   <img src="./assets/images/blog-2.jpg" width="1180" height="800" loading="lazy"
-                    alt="Dras accumsan nulla nec lacus ultricies placerat." class="img-cover">
+                    alt="شروط وإجراءات التبرع بالدم" class="img-cover">
                   <div class="card-badge">
                     <ion-icon name="calendar-outline"></ion-icon>
-                    <time class="time" datetime="2022-03-24">24th March 2022</time>
+                    <time class="time" datetime="2024-03-20">20 مارس 2024</time>
                   </div>
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Foo foo foo</a>
+                    <a href="#" class="card-title">شروط وإجراءات التبرع بالدم</a>
                   </h3>
                   <p class="card-text">
-                    Now hush little baby, don't you cry Everything's gonna be alright Stiffen that upper lip up little lady, I told ya Daddy's here to hold ya through the night I know mommy's not here right now
+                    تعرف على الشروط الصحية المطلوبة للتبرع بالدم والإجراءات المتبعة لضمان سلامة المتبرع والمستقبل. دليل شامل للمتبرعين الجدد والمنتظمين.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -422,20 +669,20 @@
               <div class="blog-card">
                 <figure class="card-banner img-holder" style="--width: 1180; --height: 800;">
                   <img src="./assets/images/blog-3.jpg" width="1180" height="800" loading="lazy"
-                    alt="Seas accumsan nulla nec lacus ultricies placerat." class="img-cover">
+                    alt="قصص نجاح من المتبرعين والمستفيدين" class="img-cover">
                   <div class="card-badge">
                     <ion-icon name="calendar-outline"></ion-icon>
-                    <time class="time" datetime="2022-03-24">24th March 2022</time>
+                    <time class="time" datetime="2024-03-15">15 مارس 2024</time>
                   </div>
                 </figure>
                 <div class="card-content">
                   <h3 class="h3">
-                    <a href="#" class="card-title">Write whatever you want here. Wee wee wee</a>
+                    <a href="#" class="card-title">قصص نجاح من المتبرعين والمستفيدين</a>
                   </h3>
                   <p class="card-text">
-                    Victim of the great machine, in love with everything I see Neon lights surrounding me, I indulge in luxury Everything I do is wrong
+                    قصص ملهمة من أشخاص حقيقيين تبرعوا بالدم وساهموا في إنقاذ أرواح الآخرين. تجارب مؤثرة تُظهر الأثر الإيجابي للتبرع بالدم على المجتمع.
                   </p>
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">اقرأ المزيد</a>
                 </div>
               </div>
             </li>
@@ -445,112 +692,111 @@
     </article>
   </main>
 
-
   <!--FOOTER-->
   <footer class="footer">
     <div class="footer-top section">
       <div class="container">
         <div class="footer-brand">
-          <a href="#" class="logo">Red Stream</a>
+          <a href="#" class="logo">التيار الأحمر</a>
           <p class="footer-text">
-            We are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry. 
-            We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
+            نحن متحمسون لربط المتبرعين بالدم مع المحتاجين إليه وسد الفجوة في صناعة الرعاية الصحية. 
+            نسعى لإنشاء مجتمع يعزز التعاطف والدعم والتضامن بين الأفراد الملتزمين بإحداث فرق.
           </p>
           <div class="schedule">
             <div class="schedule-icon">
               <ion-icon name="time-outline"></ion-icon>
             </div>
             <span class="span">
-              24 X 7:<br>
-              365 Days
+              24 ساعة × 7 أيام:<br>
+              365 يوماً
             </span>
           </div>
         </div>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Other Links</p>
+            <p class="footer-list-title">روابط أخرى</p>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Home</span>
+              <span class="span">الرئيسية</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Find donor</span>
+              <span class="span">البحث عن متبرع</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">About us</span>
+              <span class="span">من نحن</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Blog</span>
+              <span class="span">المدونة</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Contact</span>
+              <span class="span">اتصل بنا</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Login / Register</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Our Services</p>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
+              <span class="span">تسجيل الدخول / إنشاء حساب</span>
             </a>
           </li>
         </ul>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Contact Us</p>
+            <p class="footer-list-title">خدماتنا</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">حجز الدم مسبقاً</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">خدمة الإسعاف</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">استشارات طبية</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">فحوصات طبية</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">تحليل فصيلة الدم</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">متابعة صحية</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">اتصل بنا</p>
           </li>
           <li class="footer-item">
             <div class="item-icon">
@@ -558,8 +804,8 @@
             </div>
             <a href="https://goo.gl/maps/BYA5MxQUg5B8ZFLcA">
             <address class="item-text">
-              Near Thaluk Headquarters,<br>
-              Vaikom, Kottayam, Kerala IN
+              بالقرب من مقر المحافظة،<br>
+              فايكوم، كوتايام، كيرالا، الهند
             </address>
           </a>
           </li>
@@ -567,13 +813,13 @@
             <div class="item-icon">
               <ion-icon name="call-outline"></ion-icon>
             </div>
-            <a href="tel:+917052101786" class="footer-link">+91-7558-951-351</a>
+            <a href="tel:+917558951351" class="footer-link">+91-7558-951-351</a>
           </li>
           <li class="footer-item">
             <div class="item-icon">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-            <a href="mailto:help@example.com" class="footer-link">redstream001@gmail.com</a>
+            <a href="mailto:redstream001@gmail.com" class="footer-link">redstream001@gmail.com</a>
           </li>
         </ul>
       </div>
@@ -581,7 +827,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
-          &copy; 2024 All Rights Reserved by Red Stream
+          &copy; 2024 جميع الحقوق محفوظة لدى التيار الأحمر
         </p>
         <ul class="social-list">
           <li>
@@ -629,23 +875,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if the email is inserted successfully
         if ($stmt->affected_rows > 0) {
             // Email added successfully, show the popup message
-            echo '<script>showPopup("Email added successfully!");</script>';
+            echo '<script>showPopup("تم إضافة البريد الإلكتروني بنجاح!");</script>';
         } else {
             // Unable to add email, show the popup message
-            echo '<script>showPopup("Error: Unable to add email. Please try again later.");</script>';
+            echo '<script>showPopup("خطأ: لا يمكن إضافة البريد الإلكتروني. يرجى المحاولة لاحقاً.");</script>';
         }
         // Close the statement and connection
         $stmt->close();
         $conn->close();
     } else {
         // Invalid email address, show the popup message
-        echo '<script>showPopup("Error: Invalid email address. Please enter a valid email.");</script>';
+        echo '<script>showPopup("خطأ: عنوان بريد إلكتروني غير صحيح. يرجى إدخال بريد إلكتروني صالح.");</script>';
     }
 }
 ?>
 
   <!--BACK TO TOP-->
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+  <a href="#top" class="back-top-btn" aria-label="العودة إلى الأعلى" data-back-top-btn>
     <ion-icon name="caret-up" aria-hidden="true"></ion-icon>
   </a>
 

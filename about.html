@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red Stream - Connect the Donors</title>
+  <title>التيار الأحمر - ربط المتبرعين</title>
 
   <!-- favicon-->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -13,49 +13,271 @@
   <!--css-->
   <link rel="stylesheet" href="./assets/css/style.css">
   
-  <!-- google font link-->
+  <!-- Arabic font link-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      font-family: 'Cairo', 'Amiri', sans-serif;
+    }
+    
+    body {
+      direction: rtl;
+      text-align: right;
+    }
+    
     hr {
       border: none;
-      height: 1px;
-      background-color: #c5c7c9;
-      margin: 20px 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e74c3c, #3498db, #9b59b6);
+      margin: 40px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-      /* Define the column layout */
-  .column {
-    width: 33.33%;
-    float: left;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* Responsive layout */
-  @media screen and (max-width: 1024px) {
+    
+    /* Enhanced column layout */
     .column {
-      width: 100%;
+      width: 33.33%;
+      float: right; /* Changed for RTL */
+      padding: 30px;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
     }
-  }
+    
+    .column::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e74c3c, #3498db, #9b59b6);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .column:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .column:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
 
-  /* Adjust font size for smaller screens */
-  @media screen and (max-width: 768px) {
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout */
+    @media screen and (max-width: 1024px) {
+      .column {
+        width: 100%;
+        float: none;
+        margin: 20px 0;
+      }
+    }
+
+    /* Enhanced typography */
     h1 {
-      font-size: 22px;
+      background: linear-gradient(45deg, #e74c3c, #3498db, #9b59b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
+    
+    /* Enhanced hero sections */
+    .hero {
+      background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(52, 152, 219, 0.8)), url('./assets/images/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(231, 76, 60, 0.1), rgba(52, 152, 219, 0.1));
+      z-index: 1;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-title {
+      background: linear-gradient(45deg, #e74c3c, #3498db, #9b59b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+    
+    @keyframes titleGlow {
+      from {
+        filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.3));
+      }
+      to {
+        filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.5));
+      }
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .hero-banner {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Pulse Animation for Blood Icon */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .hero-content img {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Enhanced navigation for RTL */
+    .navbar-list {
+      flex-direction: row-reverse;
+    }
+    
+    .contact-list {
+      flex-direction: row-reverse;
+    }
+    
+    .social-list {
+      flex-direction: row-reverse;
+    }
+    
+    /* Enhanced Footer */
+    .footer {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e74c3c, #3498db, #9b59b6);
+    }
+    
+    /* Enhanced buttons */
+    .btn {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(231, 76, 60, 0.4);
+    }
+    
+    /* Enhanced text styling */
     p {
-      font-size: 14px;
+      line-height: 1.8;
+      color: #2c3e50;
+      font-size: 18px;
     }
-  }
+    
+    .section-subtitle {
+      color: #e74c3c;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    /* Phone link styling */
+    .phone-link {
+      display: inline;
+      color: #216aca;
+      transition: color 0.3s ease;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .phone-link:hover {
+      color: #03d9ff;
+      border-bottom: 2px solid #03d9ff;
+    }
+
+    /* Adjust font size for smaller screens */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
   </style>
 
 </head>
@@ -100,27 +322,27 @@
     </div>
     <div class="header-bottom" data-header>
       <div class="container">
-        <a href="#" class="logo">Red Stream</a>
+        <a href="#" class="logo">التيار الأحمر</a>
         <nav class="navbar container" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="index.php" class="navbar-link" data-nav-link>Home</a>
+              <a href="index.php" class="navbar-link" data-nav-link>الرئيسية</a>
             </li>
             <li>
-              <a href="#service" class="navbar-link" data-nav-link>Find donor</a>
+              <a href="#service" class="navbar-link" data-nav-link>البحث عن متبرع</a>
             </li>
             <li>
-              <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+              <a href="about.html" class="navbar-link" data-nav-link>من نحن</a>
             </li>
             <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+              <a href="#blog" class="navbar-link" data-nav-link>المدونة</a>
             </li>
             <li>
-              <a href="contact.php" class="navbar-link" data-nav-link>Contact</a>
+              <a href="contact.php" class="navbar-link" data-nav-link>اتصل بنا</a>
             </li>
           </ul>
         </nav>
-        <a href="register.php" class="btn">Login / Register</a>
+        <a href="register.php" class="btn">تسجيل الدخول / إنشاء حساب</a>
         <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
           <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
           <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
@@ -128,98 +350,101 @@
       </div>
     </div>
   </header>
+  
   <!--HERO-->
   <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
         aria-label="hero">
         <div class="container">
           <div class="hero-content">
-            <img src="assets/images/blood-icon.png" alt="ICON" width="70" height="70"> 
-            <p class="section-subtitle">Welcome To Red Stream</p>
-            <h1 class="h1 hero-title">Connecting The Donors...</h1>
+            <img src="assets/images/blood-icon.png" alt="أيقونة الدم" width="70" height="70"> 
+            <p class="section-subtitle">مرحباً بكم في التيار الأحمر</p>
+            <h1 class="h1 hero-title">ربط المتبرعين...</h1>
             <p class="hero-text">
-              Welcome to Red Stream, a dedicated community-driven platform that aims to connect blood donors and recipients seamlessly.
-              Our mission is to bridge the gap in the healthcare industry by making blood donation more accessible and efficient by avoiding the intermediaries,
-              ultimately saving lives and fostering solidarity within the community.
+              مرحباً بكم في التيار الأحمر، منصة مجتمعية مخصصة تهدف إلى ربط المتبرعين بالدم والمحتاجين إليه بسلاسة.
+              مهمتنا هي سد الفجوة في صناعة الرعاية الصحية من خلال جعل التبرع بالدم أكثر سهولة وكفاءة عبر تجنب الوسطاء،
+              وفي النهاية إنقاذ الأرواح وتعزيز التضامن داخل المجتمع.
             </p><br><br><br>
           </div>
           <figure class="hero-banner">
-            <img src="./assets/images/about.png" width="587" height="839" alt="hero banner" class="w-100">
+            <img src="./assets/images/about.png" width="587" height="839" alt="لافتة البطل" class="w-100">
           </figure>
         </div>
       </section>
+      
     <!--HERO SECOND-->
     <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
         aria-label="hero">
         <div class="container">
           <div class="hero-content">
-            
             <p class="hero-text">
-              <img src="./assets/images/about3.png" width="587" height="839" alt="hero banner" class="w-100">             
+              <img src="./assets/images/about3.png" width="587" height="839" alt="لافتة البطل" class="w-100">             
             </p>
           </div>
           <figure class="hero-banner">
-            <h1 class="h1 hero-title">Who We Are</h1>
-            <p style="font-size: larger;">Red Stream is started by the brainchild of a passionate group of engineering students polytechnic college - Govt. Polytechnic College Kaduthuruthy.
-              United by a common purpose, we came together to address the pressing need for a streamlined process of blood donation so that we can use our knowledge in the field of technology
-            and give a small contibution to the society from our side.</p>
+            <h1 class="h1 hero-title">من نحن</h1>
+            <p style="font-size: larger;">التيار الأحمر هو فكرة مجموعة متحمسة من طلاب الهندسة في الكلية التقنية - الكلية التقنية الحكومية كادوثوروثي.
+              متحدون بهدف مشترك، اجتمعنا لمعالجة الحاجة الملحة لعملية مبسطة للتبرع بالدم حتى نتمكن من استخدام معرفتنا في مجال التكنولوجيا
+            وتقديم مساهمة صغيرة للمجتمع من جانبنا.</p>
           </figure>
         </div>
       </section>
+      
     <!--Hero THIRD-->
     <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
         aria-label="hero">
         <div class="container">
           <div class="hero-content">
-            <img src="assets/images/blood-icon.png" alt="ICON" width="70" height="70"> 
-            <p class="section-subtitle">Red Stream</p>
-            <h1 class="h1 hero-title">Our Vision</h1>
+            <img src="assets/images/blood-icon.png" alt="أيقونة الدم" width="70" height="70"> 
+            <p class="section-subtitle">التيار الأحمر</p>
+            <h1 class="h1 hero-title">رؤيتنا</h1>
             <p class="hero-text">
-              At Red Stream, our vision is to create a centralized hub that connects blood donors and recipients in need. We envision a future where finding a suitable blood donor
-              is no longer a time-consuming and challenging task. Instead, it becomes a simple, efficient, and accessible process that can save lives during critical moments. Also we tried
-              our best in creating a user-friendly interface for this site so normal users can navigate and use our services easly.
+              في التيار الأحمر، رؤيتنا هي إنشاء مركز مركزي يربط المتبرعين بالدم والمحتاجين إليه. نتصور مستقبلاً حيث العثور على متبرع دم مناسب
+              لم يعد مهمة تستغرق وقتاً طويلاً ومليئة بالتحديات. بدلاً من ذلك، تصبح عملية بسيطة وفعالة ومتاحة يمكنها إنقاذ الأرواح خلال اللحظات الحرجة. كما بذلنا
+              قصارى جهدنا في إنشاء واجهة سهلة الاستخدام لهذا الموقع حتى يتمكن المستخدمون العاديون من التنقل واستخدام خدماتنا بسهولة.
             </p>
           </div>
           <figure class="hero-banner">
-            <img src="./assets/images/about5.png" width="587" height="839" alt="hero banner" class="w-100">
+            <img src="./assets/images/about5.png" width="587" height="839" alt="لافتة البطل" class="w-100">
           </figure>
         </div>
       </section>
-      <!--Hero THIRD-->
-      <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
-        aria-label="hero">
-        <div class="container">
-          <div class="hero-content">
-            
-            <p class="hero-text">
-              <img src="./assets/images/about4.png" width="587" height="839" alt="hero banner" class="w-100">             
-            </p>
-          </div>
-          <figure class="hero-banner">
-            <h1 class="h1 hero-title">How We Work</h1>
-            <p style="font-size: larger;">The process is straightforward: donors register their details with us, providing essential information about their blood type,
-              contact details, and location. By creating a comprehensive database of donors, we can quickly match them with recipients searching for compatible donors.<br><br>
-              For recipients seeking blood, our user-friendly platform allows them to enter their requirements and search for potential matches within the donor database.
-              The matching process is efficient and designed to connect recipients with suitable donors promptly.<br>
-            Also we provide a simple response back utility which users can enter their email address and we will directly respond from our side. Also users can pre-book blood for 
-          an upcoming date and we will arrange blood directly and reach you. We also have an emergency ambulance service you can call any time.</p>
-          </figure>
-        </div>
-      </section>
+      
       <!--Hero FOURTH-->
       <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
         aria-label="hero">
         <div class="container">
           <div class="hero-content">
-            <img src="assets/images/blood-icon.png" alt="ICON" width="70" height="70"> 
-            <p class="section-subtitle">Red Stream</p>
-            <h1 class="h1 hero-title">24x7 Support and Service</h1>
             <p class="hero-text">
-            We take pride in offering round-the-clock service and support and service including the ambulance services. Our team is dedicated to providing prompt assistance and addressing any concerns or queries you may have.
-            Your well-being and satisfaction are our top priorities.
+              <img src="./assets/images/about4.png" width="587" height="839" alt="لافتة البطل" class="w-100">             
             </p>
           </div>
           <figure class="hero-banner">
-            <img src="./assets/images/about2.png" width="587" height="839" alt="hero banner" class="w-100">
+            <h1 class="h1 hero-title">كيف نعمل</h1>
+            <p style="font-size: larger;">العملية بسيطة: يسجل المتبرعون تفاصيلهم معنا، ويقدمون معلومات أساسية حول فصيلة دمهم،
+              وتفاصيل الاتصال، والموقع. من خلال إنشاء قاعدة بيانات شاملة للمتبرعين، يمكننا مطابقتهم بسرعة مع المحتاجين الذين يبحثون عن متبرعين متوافقين.<br><br>
+              بالنسبة للمحتاجين الذين يبحثون عن الدم، تتيح منصتنا سهلة الاستخدام لهم إدخال متطلباتهم والبحث عن مطابقات محتملة داخل قاعدة بيانات المتبرعين.
+              عملية المطابقة فعالة ومصممة لربط المحتاجين بالمتبرعين المناسبين بسرعة.<br>
+            كما نوفر أداة رد بسيطة حيث يمكن للمستخدمين إدخال عنوان بريدهم الإلكتروني وسنرد مباشرة من جانبنا. كما يمكن للمستخدمين حجز الدم مسبقاً 
+          لتاريخ قادم وسنرتب الدم مباشرة ونصل إليكم. لدينا أيضاً خدمة إسعاف طوارئ يمكنكم الاتصال بها في أي وقت.</p>
+          </figure>
+        </div>
+      </section>
+      
+      <!--Hero FIFTH-->
+      <section class="section hero" id="home" style="background-image: url('./assets/images/hero-bg.png')"
+        aria-label="hero">
+        <div class="container">
+          <div class="hero-content">
+            <img src="assets/images/blood-icon.png" alt="أيقونة الدم" width="70" height="70"> 
+            <p class="section-subtitle">التيار الأحمر</p>
+            <h1 class="h1 hero-title">دعم وخدمة على مدار 24 ساعة</h1>
+            <p class="hero-text">
+            نفتخر بتقديم خدمة ودعم على مدار الساعة بما في ذلك خدمات الإسعاف. فريقنا مخصص لتقديم المساعدة السريعة ومعالجة أي مخاوف أو استفسارات قد تكون لديكم.
+            رفاهيتكم ورضاكم هما أولويتانا القصوى.
+            </p>
+          </div>
+          <figure class="hero-banner">
+            <img src="./assets/images/about2.png" width="587" height="839" alt="لافتة البطل" class="w-100">
           </figure>
         </div>
         <hr style="margin-left: 3cm; margin-right: 3cm;">
@@ -227,144 +452,143 @@
         <div class="row" style="overflow: hidden; padding: 1cm;">
           <!-- First Column -->
           <div class="column">
-            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">Join the Red Stream Community</h1>
+            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">انضموا إلى مجتمع التيار الأحمر</h1>
             <br>
             <p style="font-size: 17px;">
-              We invite you to join our growing community of blood donors and recipients. By becoming a part of Red Stream,
-              you contribute to a noble cause and play a vital role in saving lives. Your selfless act of blood donation can make a significant impact and bring hope to those in need.
+              ندعوكم للانضمام إلى مجتمعنا المتنامي من المتبرعين بالدم والمحتاجين إليه. من خلال كونكم جزءاً من التيار الأحمر،
+              تساهمون في قضية نبيلة وتلعبون دوراً حيوياً في إنقاذ الأرواح. عملكم النبيل في التبرع بالدم يمكن أن يحدث تأثيراً كبيراً ويجلب الأمل لمن هم في حاجة.
             </p>
           </div>
         
           <!-- Second Column -->
           <div class="column">
-            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">Let's Create a Better Tomorrow</h1>
+            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">لنصنع غداً أفضل</h1>
             <br>
             <p style="font-size: 17px;">
-              At Red Stream, we firmly believe that when individuals come together with a common purpose, remarkable things can happen. With your support and participation,
-              we can build a future where blood donation is readily available to those who need it the most. Together, we can create a better tomorrow and foster a community of caring and compassion.
+              في التيار الأحمر، نؤمن بقوة أنه عندما يجتمع الأفراد بهدف مشترك، يمكن أن تحدث أشياء رائعة. بدعمكم ومشاركتكم،
+              يمكننا بناء مستقبل حيث يكون التبرع بالدم متاحاً بسهولة لمن هم في أمس الحاجة إليه. معاً، يمكننا خلق غد أفضل وتعزيز مجتمع من الرعاية والرحمة.
             </p>
           </div>
         
           <!-- Third Column -->
           <div class="column">
-            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">Raise a fund if you can</h1>
+            <h1 style="color: var(--oxford-blue-1); font-size: var(--fs-1);">تبرعوا بالأموال إذا استطعتم</h1>
             <br>
             <p style="font-size: 17px;">
-              Ours is a service group of  dedicated persons without any intention of making profits. But inorder to run and maintain our services we have expenses, currently we are running
-              our services with the contribution of our own team and some kind personalities and sponsors. You can donate us a fund and join us to run our services seamlessly.
-              You can call or message at <a href="tel:+917052101786" class="footer-link" style="display: inline; color: #216aca;" onmouseover="this.style.color='#03d9ff'" onmouseout="this.style.color='#216aca'">+91-7558-951-351 to donate fund</a>.
+              نحن مجموعة خدمية من الأشخاص المخلصين دون أي نية لتحقيق الأرباح. ولكن لتشغيل وصيانة خدماتنا لدينا نفقات، حالياً نشغل
+              خدماتنا بمساهمة فريقنا وبعض الشخصيات الكريمة والرعاة. يمكنكم التبرع لنا بالأموال والانضمام إلينا لتشغيل خدماتنا بسلاسة.
+              يمكنكم الاتصال أو إرسال رسالة على <a href="tel:+917558951351" class="phone-link">+91-7558-951-351 للتبرع بالأموال</a>.
             </p>
           </div>
         </div>
         
       </section>
 
-
   <!--Footer-->
   <footer class="footer">
     <div class="footer-top section">
       <div class="container">
         <div class="footer-brand">
-          <a href="#" class="logo">Red Stream</a>
+          <a href="#" class="logo">التيار الأحمر</a>
           <p class="footer-text">
-            We are passionate about connecting blood donors with recipients and bridging the gap in the healthcare industry. 
-            We strive to create a community that fosters empathy, support, and solidarity among individuals who are committed to making a difference.
+            نحن متحمسون لربط المتبرعين بالدم مع المحتاجين إليه وسد الفجوة في صناعة الرعاية الصحية. 
+            نسعى لإنشاء مجتمع يعزز التعاطف والدعم والتضامن بين الأفراد الملتزمين بإحداث فرق.
           </p>
           <div class="schedule">
             <div class="schedule-icon">
               <ion-icon name="time-outline"></ion-icon>
             </div>
             <span class="span">
-              24 X 7:<br>
-              365 Days
+              24 ساعة × 7 أيام:<br>
+              365 يوماً
             </span>
           </div>
         </div>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Other Links</p>
+            <p class="footer-list-title">روابط أخرى</p>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Home</span>
+              <span class="span">الرئيسية</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Find donor</span>
+              <span class="span">البحث عن متبرع</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">About us</span>
+              <span class="span">من نحن</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Blog</span>
+              <span class="span">المدونة</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Contact</span>
+              <span class="span">اتصل بنا</span>
             </a>
           </li>
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="add-outline"></ion-icon>
-              <span class="span">Login / Register</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Our Services</p>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="footer-link">
-              <ion-icon name="add-outline"></ion-icon>
-              <span class="span">xxxxxxxxx</span>
+              <span class="span">تسجيل الدخول / إنشاء حساب</span>
             </a>
           </li>
         </ul>
         <ul class="footer-list">
           <li>
-            <p class="footer-list-title">Contact Us</p>
+            <p class="footer-list-title">خدماتنا</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">حجز الدم مسبقاً</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">خدمة الإسعاف</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">استشارات طبية</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">فحوصات طبية</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">تحليل فصيلة الدم</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="add-outline"></ion-icon>
+              <span class="span">متابعة صحية</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">اتصل بنا</p>
           </li>
           <li class="footer-item">
             <div class="item-icon">
@@ -372,8 +596,8 @@
             </div>
             <a href="https://goo.gl/maps/BYA5MxQUg5B8ZFLcA">
             <address class="item-text">
-              Near Thaluk Headquarters,<br>
-              Vaikom, Kottayam, Kerala IN
+              بالقرب من مقر المحافظة،<br>
+              فايكوم، كوتايام، كيرالا، الهند
             </address>
           </a>
           </li>
@@ -381,13 +605,13 @@
             <div class="item-icon">
               <ion-icon name="call-outline"></ion-icon>
             </div>
-            <a href="tel:+917052101786" class="footer-link">+91-7558-951-351</a>
+            <a href="tel:+917558951351" class="footer-link">+91-7558-951-351</a>
           </li>
           <li class="footer-item">
             <div class="item-icon">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-            <a href="mailto:help@example.com" class="footer-link">redstream001@gmail.com</a>
+            <a href="mailto:redstream001@gmail.com" class="footer-link">redstream001@gmail.com</a>
           </li>
         </ul>
       </div>
@@ -395,7 +619,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
-          &copy; 2024 All Rights Reserved by Red Stream
+          &copy; 2024 جميع الحقوق محفوظة لدى التيار الأحمر
         </p>
         <ul class="social-list">
           <li>
@@ -419,7 +643,7 @@
   </footer>
 
   <!--BACK TO TOP-->
-  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+  <a href="#top" class="back-top-btn" aria-label="العودة إلى الأعلى" data-back-top-btn>
     <ion-icon name="caret-up" aria-hidden="true"></ion-icon>
   </a>
 
